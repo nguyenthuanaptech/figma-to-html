@@ -1,1 +1,1 @@
-http://127.0.0.1:5500/figma/index.html
+https://www.figma.com/design/lwPpWkxOXSEHvTN3jspQn6/Untitled?t=9tGEZwjpgDgfhriG-0
