@@ -9,4 +9,125 @@ html {
 /* Khôi phục lại cỡ chữ mặc định tính theo rem */
 body {
   font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  /* Tại sao code trong body lại áp dụng cho toàn trang.
+  Hãy xem lại Bài 49: CSS Inheritance - Kế thừa trong CSS*/
+
+  /* Bài 89.1 Flex-box Tổng quan */
+}
+/* ========common========== */
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  /* Bài 51: CSS LAYOUT - DISPLAY
+  Block - Inline
+  Inline - Block
+  */
+  min-width: 118px;
+  padding: 0px 16px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 24.5px;
+  background: #171100;
+}
+
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  /* Bài 85: calc */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ==============header============== */
+.header {
+  background: #c89d26;
+}
+
+.header.fixed {
+  position: sticky;
+  top: -28px;
+}
+.header .boby-header {
+  display: flex;
+  align-items: center;
+  /* Bài 89.3: FLEX-CONTAINER
+  align-items */
+  padding: 36px 0 8px;
+
+  /* Bài 87.6: CSS POSITION
+  position: sticky */
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+}
+/* Bài 89.10 margin */
+
+.nav a {
+  position: relative;
+  /* Xem Bài: 87.2 - CSS POSITION
+Position: Absolute
+*/
+
+  color: #5f5b53;
+  font-size: 1.6rem;
+  padding: 8px 21px; /* padding tăng độ rộng bao quanh phần tử, tăng độ tương tác giữa vùng cần click và người dùng */
+  /* margin: 8px 21px; Nếu dùng margin vẫn đảm bảo khoảng cách giữa các phần tử, nhưng vùng tương tác với phần tử lại hẹp hơn so với dùng padding */
+  /* background-color: blue; */
+
+  /* font-family: Poppins; Bỏ thuộc tính này, do trong thẻ body có rồi, nó sẽ thừa kế xuống các thẻ con*/
+  /* font-size: 16px; : Quy đổi thừ px sang rem */
+  /* line-height: 28px; Thanh menu trên cùng của trình duyệt web chỉ có 1 dòng nên ko cần line-height */
+  /* 175% */
+  /* text-align: center; Các thẻ inline có phần nội dung box chứa của nó, bằng chính nội dung nó chứa.
+  Cho nên các phần tử luôn luôn nằm giữa,cho nên chúng ta ko cần thuộc tính text-align: center;
+    */
+  /*font-weight: 400; 
+  font-style: normal; Do là mặc định nên ko cần 2 thuộc tính này nữa */
+}
+
+/* Bài 33: PSEUDO-CLASSES
+:HOVER .ACTIVE
+
+Thay vì dùng font-weight => chúng ta dùng text-shadow
+Bài 65: TYPOGRAPHY IN CSS
+text-shadow & overflow
+*/
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  /* font-weight: 600; */
+  text-shadow: 1px 0 0 currentColor;
+}
+/* Thêm dấu gạch chân dưới Home chúng ta xem 
+Bài: 83 PSEUDO ELEMENTS - before, after.
+*/
+.nav li.active a::after {
+  position: absolute;
+  left: 21px;
+  bottom: 6px;
+  display: block;
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+}
+
+.header .btn-sign-up {
+  min-width: 144px;
+}
+
+.header .action {
+  margin-left: 49px;
 }
