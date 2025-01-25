@@ -1,0 +1,12 @@
+* {
+  /* Bài 47: Box Sizing */
+  box-sizing: border-box;
+}
+/* Bài 56 */
+html {
+  font-size: 62.5%;
+}
+/* Khôi phục lại cỡ chữ mặc định tính theo rem */
+body {
+  font-size: 1.6rem;
+}
