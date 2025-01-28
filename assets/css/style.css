@@ -67,12 +67,33 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Bài 67 Giữ giao diện không bị phá vỡ, các đoạn văn dài quá 1 dòng sẽ hiện dấu 3 chấm khi chạm giới hạn giao diện */
+/* Chống vỡ giao diện chiều dọc. Dài quá 1 dòng thành dấu 3 chấm */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Bài 67 Giữ giao diện không bị phá vỡ, các đoạn văn dài quá 2 dòng sẽ hiện dấu 3 chấm khi chạm giới hạn giao diện */
+/* Chống vỡ giao diện chiều dọc. Dài quá 2 dòng thành dấu 3 chấm */
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+
+/* Chống vỡ giao diện chiều ngang + cùng với trọng số 1 ở course-item*/
+.break-all {
+  word-break: break-all;
+}
+
 /* ==============header============== */
 .header {
   background: #fffcf4;
 }
 
 .header.fixed {
+  /* Chú ý xem lại chỗ này */
   z-index: 1;
   position: sticky;
   top: -28px;
@@ -395,6 +416,9 @@ Bài: 83 PSEUDO ELEMENTS - before, after.
 }
 
 .popular .course-item {
+  /*Chống vỡ giao diện chiều ngang. Trọng số bằng 1 */
+  flex: 1;
+  /* Bài 89.9 Giữ cho kích thước ổn định ko bị tác động */
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
